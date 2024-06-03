@@ -1,0 +1,5 @@
+select name as Customers from Customers left join Orders 
+where Orders.customerId is null;
+on Customers.id = Orders.customerId 
+
+[
