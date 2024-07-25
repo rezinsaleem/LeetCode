@@ -1,15 +1,9 @@
-    while (left.length && right.length) {
-        if (left[0] <= right[0]) {
-            sorted.push(left.shift())
-        } else {
-            sorted.push(right.shift())
-        }
+    let mid = Math.floor(nums.length / 2);
     }
-    return [...sorted, ...left, ...right]
-}
-    let sorted = []
-function merge(left, right) {
-
-};
-    return merge(sortArray(left), sortArray(right))
-[
+        return nums
+ */
+var sortArray = function (nums) {
+    if (nums.length < 2) {
+ * @return {number[]}
+ * @param {number[]} nums
+[5,2,3,1]
