@@ -3,14 +3,14 @@
  * @param {string} goal
  * @return {boolean}
  */
-var rotateString = function(s, goal) {
-    const array=s+s
-    if(s.length!==goal.length){
-        return false
+var rotateString = function (s, goal) {
+    s = s.split('')
+    for (let i = 0; i < s.length; i++) {
+        if (s.join('') === goal) {
+            return true;
+        } else {
+            s.push(s.shift())
+        }
     }
-    if(array.includes(goal)){
-        return true
-    }else{
-        return false
-    }
+    return false;
 };
