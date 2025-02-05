@@ -13,8 +13,6 @@ var areAlmostEqual = function (s1, s2) {
         }
         if (diff.length > 2) return false;
     }
-    
-    // if (diff.length !== 2) return false; 
     const [i, j] = diff;
     return s1[i] === s2[j] && s1[j] === s2[i];
 };
