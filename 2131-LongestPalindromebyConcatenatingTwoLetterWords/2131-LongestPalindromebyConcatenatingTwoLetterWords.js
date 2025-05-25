@@ -1,4 +1,4 @@
-// Last updated: 5/25/2025, 5:45:55 PM
+// Last updated: 5/25/2025, 5:52:49 PM
 var longestPalindrome = function (words) {
     let res = 0;
     let diff = new Map();
@@ -14,19 +14,17 @@ var longestPalindrome = function (words) {
         }
     }
 
-    // Handle diff-letter reversible pairs like "ab" + "ba"
     for (let [w, freq] of diff) {
         let rev = w[1] + w[0];
 
         if (diff.has(rev)) {
             let pairCount = Math.min(freq, diff.get(rev));
             res += pairCount * 4;
-            diff.set(w, 0);      // mark used
-            diff.set(rev, 0);    // mark used
+            diff.set(w, 0);      
+            diff.set(rev, 0);    
         }
     }
 
-    // Handle same-letter words like "ff", "oo"
     for (let [w, freq] of same) {
         res += Math.floor(freq / 2) * 4;
         if (freq % 2 === 1 && !usedMiddle) {
